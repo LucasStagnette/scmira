@@ -14,7 +14,7 @@ Supprimer
 
 Tables :
 
-- Clients : nom, telephone, id_entreprise, mail, responsable
+- Clients : id_client, nom, telephone, mail, responsable, id_entreprise
 - Entreprises : telephone, addresse, mail, responsable
 - Vannes : repere
 - Collaborateurs : nom, prenom, visa, telephone, statut
