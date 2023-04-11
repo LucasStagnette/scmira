@@ -10,3 +10,11 @@ Clients :
 Ajouter
 Modifier
 Supprimer
+
+
+Tables :
+
+- Clients : nom, telephone, id_entreprise, mail, responsable
+- Entreprises : telephone, addresse, mail, responsable
+- Vannes : repere
+- Collaborateurs : nom, prenom, visa, telephone, statut
