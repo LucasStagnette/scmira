@@ -1,0 +1,3 @@
+clients:
+tableau des clients, chaque ligne les infos + boutons edit, suppr
+si bouton edit clique alors on peut modifier la ligne du tableau
