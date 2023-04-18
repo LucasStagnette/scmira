@@ -1,0 +1,130 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#repere, #boutonclient {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 20%;
+  }
+  
+#repere {
+    flex: 1;
+    max-width: 400px;
+    margin-right: 10px;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#repere p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+#repere input[type="text"] {
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#repere button[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#boutonclient {
+    flex: 1;
+    max-width: 400px;
+    margin-left: 10px;
+    padding: 20px;
+    text-align: center;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#boutonclient button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+table {
+    border-collapse: collapse;
+    width: 90%;
+
+}
+
+th,
+td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+th {
+    background-color: #333;
+    color: white;
+}
+
+.tableauclients {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-back {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-back:hover {
+    background-color: #333;
+}
+.btn-modifier, .btn-supprimer {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.btn-modifier img, .btn-supprimer img {
+    width: 20px;
+    height: 20px;
+    margin-left: 30px;
+}
