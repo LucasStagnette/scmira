@@ -1,5 +1,5 @@
 Index : 
-bouton Vannes
+boutons Vannes
 bouton Clients
 
 Vannes : 
