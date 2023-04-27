@@ -1,6 +1,21 @@
 Index : 
-bouton Vnns
-bouton Client
+bouton Vanne
+bouton Clients
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Vannes : 
 Repère, si il est enregistré : -> modifier, imprimer, verrouiller
