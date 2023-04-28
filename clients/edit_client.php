@@ -55,7 +55,7 @@ if (isset($_POST['modifier'])) {
             </div>
 
             <div>
-                <label for="telephone">Telephone</label>
+                <label for="telephone">Téléphone</label>
                 <input type="text" id="telephone" name="telephone" value="<?= $client_info->telephone ?>" placeholder="Telephone..." required>
             </div>
 
