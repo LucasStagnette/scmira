@@ -46,23 +46,22 @@ function afficherEntreprises()
 }
 
 // fonction pour modifier les informations d'un client
-function modifierClient($nom, $telephone, $mail, $responsable, $entreprise, $id)
+function modifierClient($nom, $telephone, $mail, $responsable, $id_entreprise, $id)
 {
     if(require("connexion.php")){
         // requete pour modifier la table clients
         $req = $access -> prepare("UPDATE clients SET nom=?, telephone=?, mail=?, responsable=?, id_entreprise=? WHERE id_client = ?");
-        $req -> execute(array($nom, $telephone, $mail, $responsable, $entreprise, $id));
+        $req -> execute(array($nom, $telephone, $mail, $responsable, $id_entreprise, $id));
         $req -> closeCursor();
     }
 }
 
-function idEntreprise($nom){
-    if(require("connexion.php")){
-        $req = $access -> prepare("SELECT id_entreprise FROM entreprises WHERE nom=?");
-        $req -> execute(array($nom));
-        $data = $req -> fetchAll(PDO::FETCH_OBJ);
-        var_dump($data);
+// fonction pour ajouter un client
+function newClient($nom, $telephone, $mail, $responsable, $id_entreprise)
+{
+    if(require("connexion.php")) {
+        $req = $access -> prepare("INSERT INTO clients (nom, telephone, mail, responsable, id_entreprise) VALUES(?,?,?,?,?)");
+        $req -> execute(array($nom, $telephone, $mail, $responsable, $id_entreprise));
         $req -> closeCursor();
-        return $data;
     }
 }

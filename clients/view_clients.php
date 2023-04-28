@@ -14,6 +14,7 @@ $clients = afficherClients();
 
 <body>
     <button class="btn-back" onclick="location.href='../index.php'">Retour</button>
+    <button class="btn-back" onclick="location.href='add_client.php'">Ajouter un client</button>
     <div class="tableauclients">
         <table id="table">
             <thead>
