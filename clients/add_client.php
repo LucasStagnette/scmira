@@ -5,7 +5,7 @@ $entreprises = afficherEntreprises();
 
 
 // si le bouton ajouter client est clique
-if (isset($_POST["valider"])){
+if (isset($_POST["valider"])) {
     if (isset($_POST["nom"]) and isset($_POST["telephone"]) and isset($_POST["mail"]) and isset($_POST["responsable"]) and isset($_POST["entreprise"])) {
         if (!empty($_POST["nom"]) and !empty($_POST["telephone"]) and !empty($_POST["mail"]) and !empty($_POST["responsable"]) and !empty($_POST["entreprise"])) {
             $nom = htmlspecialchars(strip_tags($_POST["nom"]));
@@ -16,9 +16,8 @@ if (isset($_POST["valider"])){
 
             try {
                 newClient($nom, $telephone, $mail, $responsable, $id_entreprise);
-            }
-            catch (Exception $e) {
-                $e-> getMessage();
+            } catch (Exception $e) {
+                $e->getMessage();
             }
         }
     }
