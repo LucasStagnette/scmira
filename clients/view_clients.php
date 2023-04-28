@@ -1,5 +1,8 @@
 <?php
+// Inclusion du fichier de commandes pour accéder aux fonctions nécessaires
 require("../config/commandes.php");
+
+// Appel de la fonction pour récupérer la liste des clients
 $clients = afficherClients();
 ?>
 
@@ -13,11 +16,15 @@ $clients = afficherClients();
 </head>
 
 <body>
+    <!-- Bouton pour retourner à la page d'accueil -->
     <button class="btn-back" onclick="location.href='../index.php'">Retour</button>
+    <!-- Bouton pour ajouter un client -->
     <button class="btn-back" onclick="location.href='add_client.php'">Ajouter un client</button>
     <div class="tableauclients">
+        <!-- Tableau pour afficher la liste des clients -->
         <table id="table">
             <thead>
+                <!-- Entêtes des colonnes avec la possibilité de trier en cliquant dessus -->
                 <tr>
                     <th onclick="sortTable(0)">Nom</th>
                     <th onclick="sortTable(1)">Téléphone</th>
@@ -29,6 +36,7 @@ $clients = afficherClients();
             </thead>
 
             <tbody>
+                <!-- Parcours de la liste des clients pour les afficher dans le tableau -->
                 <?php foreach ($clients as $client) : ?>
                     <tr>
                         <td><?= $client->nom ?></td>
@@ -37,14 +45,17 @@ $clients = afficherClients();
                         <td><?= $client->responsable ?></td>
                         <td><?= $client->e_nom ?></td>
                         <td>
-                            <!-- bouton modifier -->
+                            <!-- Bouton pour modifier un client -->
                             <button class="btn-modifier">
-                                <a href="edit_client.php?id_client=<?=$client->id_client?>">
+                                <a href="edit_client.php?id_client=<?= $client->id_client ?>">
                                     <img src="../annexe/logo_edit.png" alt="Modifier" />
                                 </a>
                             </button>
+                            <!-- Bouton pour supprimer un client -->
                             <button class="btn-supprimer">
-                                <img src="../annexe/logo_suppr.png" alt="Supprimer" />
+                                <a href="../config/commandes.php?action=supprimer&id_client=<?= $client->id_client ?>&from_view=true">
+                                    <img src="../annexe/logo_suppr.png" alt="Supprimer" />
+                                </a>
                             </button>
                         </td>
                     </tr>
@@ -56,8 +67,8 @@ $clients = afficherClients();
 
 </html>
 
+<!-- Fonction JavaScript pour trier le tableau selon la colonne sur laquelle on a cliqué -->
 <script>
-    // fonction pour trier par ordre croissant selon la colonne sur laquelle on a clique
     function sortTable(columnIndex) {
         let table, rows, switching, i, x, y, shouldSwitch;
         table = document.querySelector('table');
