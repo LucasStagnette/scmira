@@ -16,8 +16,15 @@ $clients = afficherClients();
 </head>
 
 <body>
-    <!-- Bouton pour retourner à la page d'accueil -->
-    <button class="btn-back" onclick="location.href='../index.php'">Retour</button>
+    <header>
+        <nav>
+            <ul class="navbar_l">
+                <li class="navbar_e"><a class="navbar_a" href="../index.php">Accueil</a></li>
+                <li class="navbar_e"><a class="navbar_a" href="../entreprises/view_entreprises.php">Entreprises</a></li>
+                <li class="navbar_e"><a class="navbar_a" href="../collaborateurs/view_collaborateurs.php">Collaborateurs</a></li>
+            </ul>
+        </nav>
+    </header>
     <!-- Bouton pour ajouter un client -->
     <button class="btn-back" onclick="location.href='add_client.php'">Ajouter un client</button>
     <div class="tableauclients">
@@ -53,7 +60,7 @@ $clients = afficherClients();
                             </button>
                             <!-- Bouton pour supprimer un client -->
                             <button class="btn-supprimer">
-                                <a href="../config/commandes.php?action=supprimer&id_client=<?= $client->id_client ?>&from_view=true">
+                                <a href="../config/commandes.php?action=supprimerclient&id_client=<?= $client->id_client ?>&from_view=true">
                                     <img src="../annexe/logo_suppr.png" alt="Supprimer" />
                                 </a>
                             </button>

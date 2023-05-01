@@ -22,8 +22,8 @@ if (isset($_POST['modifier'])) {
             $telephone = htmlspecialchars(strip_tags($_POST['telephone']));
             $mail = htmlspecialchars(strip_tags($_POST['mail']));
             $responsable = htmlspecialchars(strip_tags($_POST['responsable']));
-
-            $id_entreprise = $_POST['entreprise'];
+            $id_entreprise = htmlspecialchars(strip_tags($_POST['entreprise']));
+            
             try {
                 modifierClient($nom, $telephone, $mail, $responsable, $id_entreprise, $id_client);
                 header("Location: view_clients.php");
@@ -40,12 +40,22 @@ if (isset($_POST['modifier'])) {
 <html lang="fr">
 
 <head>
-    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <link rel="stylesheet" type="text/css" href="../style.css" />
     <meta charset="utf-8" />
     <title>Scimera</title>
 </head>
 
 <body>
+    <header>
+        <nav>
+            <ul class="navbar_l">
+                <li class="navbar_e"><a class="navbar_a" href="../index.php">Accueil</a></li>
+                <li class="navbar_e"><a class="navbar_a" href="view_clients.php">Clients</a></li>
+                <li class="navbar_e"><a class="navbar_a" href="../entreprises/view_entreprises.php">Entreprises</a></li>
+                <li class="navbar_e"><a class="navbar_a" href="../collaborateurs/view_collaborateurs.php">Collaborateurs</a></li>
+            </ul>
+        </nav>
+    </header>
     <?php foreach ($client as $client_info) : ?>
         <!-- Formulaire pour editer un client -->
         <form method="post">

@@ -27,12 +27,22 @@ if (isset($_POST["valider"])) {
 <html lang="fr">
 
 <head>
-    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <link rel="stylesheet" type="text/css" href="../style.css" />
     <meta charset="utf-8" />
     <title>Nouveau Client</title>
 </head>
 
 <body>
+    <header>
+        <nav>
+            <ul class="navbar_l">
+                <li class="navbar_e"><a class="navbar_a" href="../index.php">Accueil</a></li>
+                <li class="navbar_e"><a class="navbar_a" href="view_clients.php">Clients</a></li>
+                <li class="navbar_e"><a class="navbar_a" href="../entreprises/view_entreprises.php">Entreprises</a></li>
+                <li class="navbar_e"><a class="navbar_a" href="../collaborateurs/view_collaborateurs.php">Collaborateurs</a></li>
+            </ul>
+        </nav>
+    </header>
     <!-- formulaire pour ajouter un client -->
     <form method="post">
         <label>Remplisser les champs suivants pour ajouter un client</label>
