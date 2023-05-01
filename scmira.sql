@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Apr 27, 2023 at 05:19 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Hôte : localhost
+-- Généré le : lun. 01 mai 2023 à 23:11
+-- Version du serveur : 10.4.28-MariaDB
+-- Version de PHP : 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `scmira`
+-- Base de données : `scmira`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `clients`
+-- Structure de la table `clients`
 --
 
 CREATE TABLE `clients` (
@@ -37,17 +37,18 @@ CREATE TABLE `clients` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `clients`
+-- Déchargement des données de la table `clients`
 --
 
 INSERT INTO `clients` (`id_client`, `nom`, `telephone`, `mail`, `responsable`, `id_entreprise`) VALUES
 (1, 'lucas', '06792736293', 'lucasgrosliere@outlook.fr', 'maria', 1),
-(2, 'andre2', '3456787654', 'andreparo@gmail.com', 'lucas', 2);
+(3, 'test', 'testste', 'testset', 'tsetse', 4),
+(4, 'j', 'j', 'j', 'j', 4);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `collaborateurs`
+-- Structure de la table `collaborateurs`
 --
 
 CREATE TABLE `collaborateurs` (
@@ -59,10 +60,17 @@ CREATE TABLE `collaborateurs` (
   `statut` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Déchargement des données de la table `collaborateurs`
+--
+
+INSERT INTO `collaborateurs` (`id_collab`, `nom`, `prenom`, `visa`, `telephone`, `statut`) VALUES
+(1, 'michel', 'jean', '56qdsf', '3456786', 'je sais pas');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `entreprises`
+-- Structure de la table `entreprises`
 --
 
 CREATE TABLE `entreprises` (
@@ -75,17 +83,17 @@ CREATE TABLE `entreprises` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `entreprises`
+-- Déchargement des données de la table `entreprises`
 --
 
 INSERT INTO `entreprises` (`id_entreprise`, `nom`, `telephone`, `adresse`, `mail`, `responsable`) VALUES
 (1, 'la capital', '3498569', 'rue de la capital', 'capital@jsp.com', 'marie'),
-(2, 'les mouettes', '123456789', 'rue des mouettes', 'mouettes@mer.fr', 'pastis');
+(4, 'u', 'u', 'u', 'u', 'u');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `vannes`
+-- Structure de la table `vannes`
 --
 
 CREATE TABLE `vannes` (
@@ -157,56 +165,56 @@ ALTER TABLE `vannes`
   ADD `remontage` varchar(50) NOT NULL;
 
 --
--- Indexes for dumped tables
+-- Index pour les tables déchargées
 --
 
 --
--- Indexes for table `clients`
+-- Index pour la table `clients`
 --
 ALTER TABLE `clients`
   ADD PRIMARY KEY (`id_client`),
   ADD KEY `fk_entreprise_client` (`id_entreprise`);
 
 --
--- Indexes for table `collaborateurs`
+-- Index pour la table `collaborateurs`
 --
 ALTER TABLE `collaborateurs`
   ADD PRIMARY KEY (`id_collab`);
 
 --
--- Indexes for table `entreprises`
+-- Index pour la table `entreprises`
 --
 ALTER TABLE `entreprises`
   ADD PRIMARY KEY (`id_entreprise`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT pour les tables déchargées
 --
 
 --
--- AUTO_INCREMENT for table `clients`
+-- AUTO_INCREMENT pour la table `clients`
 --
 ALTER TABLE `clients`
-  MODIFY `id_client` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_client` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `collaborateurs`
+-- AUTO_INCREMENT pour la table `collaborateurs`
 --
 ALTER TABLE `collaborateurs`
-  MODIFY `id_collab` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_collab` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `entreprises`
+-- AUTO_INCREMENT pour la table `entreprises`
 --
 ALTER TABLE `entreprises`
-  MODIFY `id_entreprise` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_entreprise` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- Constraints for dumped tables
+-- Contraintes pour les tables déchargées
 --
 
 --
--- Constraints for table `clients`
+-- Contraintes pour la table `clients`
 --
 ALTER TABLE `clients`
   ADD CONSTRAINT `fk_entreprise_client` FOREIGN KEY (`id_entreprise`) REFERENCES `entreprises` (`id_entreprise`);
