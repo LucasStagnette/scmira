@@ -1,5 +1,5 @@
 <?php 
-require("./config/commandes.php");
+require("config/commandes.php");
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -10,6 +10,15 @@ require("./config/commandes.php");
 	<link rel="stylesheet" type="text/css" href="./style.css">
 </head>
 <body>
+	<header>
+        <nav>
+            <ul class="navbar_l">
+                <li class="navbar_e"><a class="navbar_a" href="clients/view_clients.php">Clients</a></li>
+                <li class="navbar_e"><a class="navbar_a" href="entreprises/view_entreprises.php">Entreprises</a></li>
+                <li class="navbar_e"><a class="navbar_a" href="collaborateurs/view_collaborateurs.php">Collaborateurs</a></li>
+            </ul>
+        </nav>
+    </header>
 	<main>
 		<div id="repere">
 			<p>Entrez le repère de la vanne</p>
@@ -17,9 +26,6 @@ require("./config/commandes.php");
 				<input placeholder="Repère de la vanne..." type="text" id="serial-number" name="serial-number">
 				<button type="submit">Envoyer</button>
 			</form>
-		</div>
-		<div id="boutonclient">
-			<a href="./clients/view_clients.php"><button>Clients</button></a>
 		</div>
 	</main>
 </body>
