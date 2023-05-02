@@ -1,6 +1,22 @@
 <?php 
 require("config/commandes.php");
+
+$collaborateurs = afficherCollaborateurs();
+
+if (isset($_POST['afficher'])) {
+
+	if (isset($_POST['identite'])) {
+
+		$repere = htmlspecialchars(strip_tags($_POST['serial-number']));
+		$collaborateur = htmlspecialchars(strip_tags($_POST['identite']));
+		// rediriger ici l'utilisateur vers la page de la vanne avec les variables en paramètre
+
+	} else {
+		$error_message = "Veuillez sélectionner une option de la liste déroulante.";
+	}
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -21,10 +37,25 @@ require("config/commandes.php");
     </header>
 	<main>
 		<div id="repere">
-			<p>Entrez le repère de la vanne</p>
-			<form action="page-code.html">
-				<input placeholder="Repère de la vanne..." type="text" id="serial-number" name="serial-number">
-				<button type="submit">Envoyer</button>
+			<form method="post">
+
+				<div>
+					<label>Identifez-vous</label>
+					<select name="identite">
+						<option selected disabled>Sélectionnez une option</option>
+						<?php foreach($collaborateurs as $collaborateur) : ?>
+							<option value="<?= $collaborateur->id_collab?>"><?= $collaborateur->prenom?> <?= $collaborateur->nom?></option>
+						<?php endforeach ?>
+					</select>
+				</div>
+
+				<?php if (isset($error_message)) : ?>
+					<p><?= $error_message ?></p>
+				<?php endif ?>
+
+				<label>Entrez le repère de la vanne</label>
+				<input placeholder="Repère de la vanne..." type="number" id="serial-number" required name="serial-number">
+				<button name="afficher" type="submit">Afficher</button>
 			</form>
 		</div>
 	</main>
