@@ -49,8 +49,8 @@ if (isset($_POST['modifier'])) {
         <nav>
             <ul class="navbar_l">
                 <li class="navbar_e"><a class="navbar_a" href="../index.php">Accueil</a></li>
-                <li class="navbar_e"><a class="navbar_a" href="view_clients.php">Clients</a></li>
-                <li class="navbar_e"><a class="navbar_a" href="../entreprises/view_entreprises.php">Entreprises</a></li>
+                <li class="navbar_e"><a class="navbar_a" href="../clients/view_clients.php">Clients</a></li>
+                <li class="navbar_e"><a class="navbar_a" href="view_entreprises.php">Entreprises</a></li>
                 <li class="navbar_e"><a class="navbar_a" href="../collaborateurs/view_collaborateurs.php">Collaborateurs</a></li>
             </ul>
         </nav>
