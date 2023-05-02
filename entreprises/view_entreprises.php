@@ -34,18 +34,22 @@ if (isset($_POST['valider'])) {
     <!-- Bouton pour ajouter une entreprise -->
     <button class="btn-back" onclick="location.href='add_entreprises.php'">Ajouter une entreprise</button>
 
-    <!-- probleme clef etrangere et resolution -->
-    <h2>Attention l'entreprise ne se supprimera pas si un client en fait parti !</h2>
-    <p>Avec le bouton ci-dessous vous pouvez supprimer tous les clients appartenant à une entreprise</p>
-    <form method="post">
+    <!-- Modification de la balise form pour ajouter une confirmation avant la suppression -->
+    <center>
+    <form style="display: inline-block; margin-right: 20px; padding: 10px; border: 1px solid black; border-radius: 5px;width:700px;" method="post" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer tous les clients de cette entreprise ? Cette action est irréversible !')">
+        <label>Attention l'entreprise ne se supprimera pas si un client en fait partie !</label>
+        <label>Avec le bouton ci-dessous, vous pouvez supprimer tous les clients appartenant à une entreprise</label>
         <select name="id_entreprise">
             <option>-------</option>
-            <?php foreach ($entreprises as $entreprise) :?>
+            <?php foreach ($entreprises as $entreprise) : ?>
                 <option value="<?= $entreprise->id_entreprise ?>"><?= $entreprise->nom ?></option>
             <?php endforeach ?>
         </select>
-        <input type="Submit" value="Supprimer les clients" name="valider">
+        <input style="background-color: #333;border: none;color: white;padding: 10px 20px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;border-radius: 5px;cursor: pointer;margin-right: 20px;" type="submit" value="Supprimer les clients" name="valider">
     </form>
+    </center>
+
+    <br> <br>
     <div class="tableauclients">
         <!-- Tableau pour afficher la liste des entreprises -->
         <table id="table">

@@ -24,13 +24,14 @@ if (isset($_POST["valider"])) {
 <html lang="fr">
 
 <head>
-    <link rel="stylesheet" type="text/css" href="../style.css" />
+    <link rel="stylesheet" type="text/css" href="../style2.css" />
     <meta charset="utf-8" />
     <title>Nouveau Collaborateur</title>
 </head>
 
 <body>
     <header>
+        <center>
         <nav>
             <ul class="navbar_l">
                 <li class="navbar_e"><a class="navbar_a" href="../index.php">Accueil</a></li>
@@ -39,6 +40,7 @@ if (isset($_POST["valider"])) {
                 <li class="navbar_e"><a class="navbar_a" href="view_collaborateurs.php">Collaborateurs</a></li>
             </ul>
         </nav>
+        </center>
     </header>
     <!-- formulaire pour ajouter un collaborateur -->
     <form method="post">
@@ -61,7 +63,7 @@ if (isset($_POST["valider"])) {
 
         <div>
             <label for="telephone">Téléphone :</label>
-            <input type="text" name="telephone" placeholder="Téléphone..." required>
+            <input type="number" name="telephone" placeholder="Téléphone..." required>
         </div>
 
         <div>
@@ -71,8 +73,5 @@ if (isset($_POST["valider"])) {
 
         <input type="submit" name="valider" value="Ajouter le collaborateur">
     </form>
-    <!-- bouton annuler -->
-    <button onclick="location.href='view_collaborateurs.php'">Retour</button>
 </body>
-
 </html>

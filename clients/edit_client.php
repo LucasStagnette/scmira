@@ -40,13 +40,14 @@ if (isset($_POST['modifier'])) {
 <html lang="fr">
 
 <head>
-    <link rel="stylesheet" type="text/css" href="../style.css" />
+    <link rel="stylesheet" type="text/css" href="../style2.css" />
     <meta charset="utf-8" />
     <title>Scimera</title>
 </head>
 
 <body>
     <header>
+        <center>
         <nav>
             <ul class="navbar_l">
                 <li class="navbar_e"><a class="navbar_a" href="../index.php">Accueil</a></li>
@@ -55,6 +56,7 @@ if (isset($_POST['modifier'])) {
                 <li class="navbar_e"><a class="navbar_a" href="../collaborateurs/view_collaborateurs.php">Collaborateurs</a></li>
             </ul>
         </nav>
+        </center>
     </header>
     <?php foreach ($client as $client_info) : ?>
         <!-- Formulaire pour editer un client -->
@@ -66,7 +68,7 @@ if (isset($_POST['modifier'])) {
 
             <div>
                 <label for="telephone">Téléphone</label>
-                <input type="text" id="telephone" name="telephone" value="<?= $client_info->telephone ?>" placeholder="Telephone..." required>
+                <input type="number" id="telephone" name="telephone" value="<?= $client_info->telephone ?>" placeholder="Telephone..." required>
             </div>
 
             <div>
@@ -92,8 +94,6 @@ if (isset($_POST['modifier'])) {
             <!-- bouton modifier -->
             <input type="submit" name="modifier" value="Modifier">
         </form>
-        <!-- bouton annuler -->
-        <button onclick="location.href='view_clients.php'">Annuler</button>
     <?php endforeach ?>
 </body>
 
