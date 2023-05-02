@@ -1,8 +1,8 @@
 <?php
-// Inclusion du fichier de commandes pour accéder aux fonctions nécessaires
+// Inclusion du fichier de commandes pour acceder aux fonctions necessaires
 require("../config/commandes.php");
 
-// Appel de la fonction pour récupérer la liste des clients
+// Appel de la fonction pour recuperer la liste des clients
 $collaborateurs = afficherCollaborateurs();
 ?>
 
@@ -31,7 +31,7 @@ $collaborateurs = afficherCollaborateurs();
         <!-- Tableau pour afficher la liste des collaborateurs -->
         <table id="table">
             <thead>
-                <!-- Entêtes des colonnes avec la possibilité de trier en cliquant dessus -->
+                <!-- Entetes des colonnes avec la possibilité de trier en cliquant dessus -->
                 <tr>
                     <th onclick="sortTable(0)">Nom</th>
                     <th onclick="sortTable(1)">Prénom</th>
@@ -74,7 +74,7 @@ $collaborateurs = afficherCollaborateurs();
 
 </html>
 
-<!-- Fonction JavaScript pour trier le tableau selon la colonne sur laquelle on a cliqué -->
+<!-- Fonction JavaScript pour trier le tableau selon la colonne sur laquelle on a clique -->
 <script>
     function sortTable(columnIndex) {
         let table, rows, switching, i, x, y, shouldSwitch;

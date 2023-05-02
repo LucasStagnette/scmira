@@ -50,7 +50,7 @@ if (isset($_POST['valider'])) {
         <!-- Tableau pour afficher la liste des entreprises -->
         <table id="table">
             <thead>
-                <!-- Entêtes des colonnes avec la possibilité de trier en cliquant dessus -->
+                <!-- Entetes des colonnes avec la possibilite de trier en cliquant dessus -->
                 <tr>
                     <th onclick="sortTable(0)">Nom</th>
                     <th onclick="sortTable(1)">Téléphone</th>
@@ -93,7 +93,7 @@ if (isset($_POST['valider'])) {
 
 </html>
 
-<!-- Fonction JavaScript pour trier le tableau selon la colonne sur laquelle on a cliqué -->
+<!-- Fonction JavaScript pour trier le tableau selon la colonne sur laquelle on a clique -->
 <script>
     function sortTable(columnIndex) {
         let table, rows, switching, i, x, y, shouldSwitch;
