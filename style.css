@@ -52,11 +52,11 @@ nav {
     justify-content: center;
     align-items: center;
     height: 20%;
-  }
+}
   
 #repere {
     flex: 1;
-    max-width: 400px;
+    height: 500px;
     margin-right: 10px;
     padding: 20px;
     background-color: #f2f2f2;
@@ -66,28 +66,33 @@ nav {
     text-align: center;
 }
 
+
 #repere p {
-    font-size: 1.2rem;
+    font-size: 1.5rem; 
     margin-bottom: 10px;
 }
 
-#repere input[type="text"] {
-    padding: 5px;
+#repere input[type="number"] {
+    padding: 10px; 
     border-radius: 3px;
     border: 1px solid #ccc;
     width: 100%;
     box-sizing: border-box;
+    font-size: 1.2rem; 
 }
 
 #repere button[type="submit"] {
     background-color: #333;
+    width: 300px;
     color: #fff;
-    padding: 5px 15px;
+    padding: 10px 20px; 
     border-radius: 3px;
     border: none;
     cursor: pointer;
     margin-top: 10px;
+    font-size: 1.2rem;
 }
+
 
 #boutonclient {
     flex: 1;
@@ -168,4 +173,14 @@ th {
 
 #table{
     border-radius: 20px;
+}
+
+form select {
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
 }
