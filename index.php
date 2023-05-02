@@ -4,12 +4,11 @@ require("config/commandes.php");
 $collaborateurs = afficherCollaborateurs();
 
 if (isset($_POST['afficher'])) {
-
 	if (isset($_POST['identite'])) {
 
 		$repere = htmlspecialchars(strip_tags($_POST['serial-number']));
 		$collaborateur = htmlspecialchars(strip_tags($_POST['identite']));
-		// rediriger ici l'utilisateur vers la page de la vanne avec les variables en paramètre
+		// rediriger l'utilisateur vers la page de la vanne avec les variables en paramètre
 
 	} else {
 		$error_message = "Veuillez sélectionner une option de la liste déroulante.";
