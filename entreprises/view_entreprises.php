@@ -4,6 +4,12 @@ require("../config/commandes.php");
 
 // Appel de la fonction pour récupérer la liste des clients
 $entreprises = afficherEntreprises();
+
+if (isset($_POST['valider'])) {
+    $id_entreprise = htmlspecialchars(strip_tags($_POST['id_entreprise']));
+    deleteclients($id_entreprise);
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -31,12 +37,14 @@ $entreprises = afficherEntreprises();
     <!-- probleme clef etrangere et resolution -->
     <h2>Attention l'entreprise ne se supprimera pas si un client en fait parti. <br> Solution :</h2>
     <p>Supprimer tous les clients appartenant à l'entreprise : </p>
-    <select>
-        <?php foreach ($entreprises as $entreprise) :?>
-            <option value="<?= $entreprise->id_entreprise ?>"><?= $entreprise->nom ?></option>
-        <?php endforeach ?>
-    </select>
-    <button onclick=deleteclients()>Supprimer</button>
+    <form method="post">
+        <select name="id_entreprise">
+            <?php foreach ($entreprises as $entreprise) :?>
+                <option value="<?= $entreprise->id_entreprise ?>"><?= $entreprise->nom ?></option>
+            <?php endforeach ?>
+        </select>
+        <input type="Submit" value="Valider" name="valider">
+    </form>
     <div class="tableauclients">
         <!-- Tableau pour afficher la liste des entreprises -->
         <table id="table">
