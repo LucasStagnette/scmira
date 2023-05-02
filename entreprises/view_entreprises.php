@@ -35,15 +35,16 @@ if (isset($_POST['valider'])) {
     <button class="btn-back" onclick="location.href='add_entreprises.php'">Ajouter une entreprise</button>
 
     <!-- probleme clef etrangere et resolution -->
-    <h2>Attention l'entreprise ne se supprimera pas si un client en fait parti. <br> Solution :</h2>
-    <p>Supprimer tous les clients appartenant à l'entreprise : </p>
+    <h2>Attention l'entreprise ne se supprimera pas si un client en fait parti !</h2>
+    <p>Avec le bouton ci-dessous vous pouvez supprimer tous les clients appartenant à une entreprise</p>
     <form method="post">
         <select name="id_entreprise">
+            <option>-------</option>
             <?php foreach ($entreprises as $entreprise) :?>
                 <option value="<?= $entreprise->id_entreprise ?>"><?= $entreprise->nom ?></option>
             <?php endforeach ?>
         </select>
-        <input type="Submit" value="Valider" name="valider">
+        <input type="Submit" value="Supprimer les clients" name="valider">
     </form>
     <div class="tableauclients">
         <!-- Tableau pour afficher la liste des entreprises -->
