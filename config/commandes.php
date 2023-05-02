@@ -1,8 +1,4 @@
 <?php
-
-
-
-
 // renvoie toutes les infos des clients par ordre de nom
 function afficherClients()
 {
@@ -16,61 +12,11 @@ function afficherClients()
     }
 }
 
-
 // affiche les infos d'un client
 function afficherClient($id)
 {
     if (require("connexion.php")) {
         $req = $access->prepare("SELECT * FROM clients WHERE id_client=$id");
-        $req->execute();
-        $data = $req->fetchAll(PDO::FETCH_OBJ);
-        $req->closeCursor();
-        return $data;
-    }
-}
-
-
-// renvoie toutes les infos des entreprises
-function afficherEntreprises()
-{
-    if (require("connexion.php")) {
-        $req = $access->prepare("SELECT * FROM entreprises");
-        $req->execute();
-        $data = $req->fetchAll(PDO::FETCH_OBJ);
-        $req->closeCursor();
-        return $data;
-    }
-}
-
-// affiche les infos d'une entreprise
-function afficherEntreprise($id)
-{
-    if (require("connexion.php")) {
-        $req = $access->prepare("SELECT * FROM entreprises WHERE id_entreprise=$id");
-        $req->execute();
-        $data = $req->fetchAll(PDO::FETCH_OBJ);
-        $req->closeCursor();
-        return $data;
-    }
-}
-
-// renvoie toutes les infos des collaborateurs
-function afficherCollaborateurs()
-{
-    if (require("connexion.php")) {
-        $req = $access->prepare("SELECT * FROM collaborateurs");
-        $req->execute();
-        $data = $req->fetchAll(PDO::FETCH_OBJ);
-        $req->closeCursor();
-        return $data;
-    }
-}
-
-// affiche les infos d'un collaborateur
-function afficherCollaborateur($id)
-{
-    if (require("connexion.php")) {
-        $req = $access->prepare("SELECT * FROM collaborateurs WHERE id_collab=$id");
         $req->execute();
         $data = $req->fetchAll(PDO::FETCH_OBJ);
         $req->closeCursor();
@@ -108,6 +54,53 @@ function deleteclients($id_entreprise)
         $req -> closeCursor();
     }
 }
+
+// si on recoit une demande de suppression d'un client
+if (isset($_GET['action']) && $_GET['action'] == 'supprimerclient') {
+
+    $idClient = $_GET['id_client'];
+
+    // on verifie que ca provient du bouton supprimer
+    if (isset($_GET['from_view']) && $_GET['from_view'] == 'true') {
+        if (require("connexion.php")) {
+
+            $req = $access->prepare("DELETE FROM clients WHERE id_client=?");
+            $req->execute(array($idClient));
+            header("Location: ../clients/view_clients.php");
+        }
+    } else {
+        header("Location: ../clients/view_clients.php");
+    }
+}
+
+
+
+
+
+// renvoie toutes les infos des entreprises
+function afficherEntreprises()
+{
+    if (require("connexion.php")) {
+        $req = $access->prepare("SELECT * FROM entreprises");
+        $req->execute();
+        $data = $req->fetchAll(PDO::FETCH_OBJ);
+        $req->closeCursor();
+        return $data;
+    }
+}
+
+// affiche les infos d'une entreprise
+function afficherEntreprise($id)
+{
+    if (require("connexion.php")) {
+        $req = $access->prepare("SELECT * FROM entreprises WHERE id_entreprise=$id");
+        $req->execute();
+        $data = $req->fetchAll(PDO::FETCH_OBJ);
+        $req->closeCursor();
+        return $data;
+    }
+}
+
 // fonction pour modifier les informations d'une entreprise
 function modifierEntreprise($nom, $telephone, $adresse, $mail, $responsable, $id)
 {
@@ -129,6 +122,51 @@ function newEntreprise($nom, $telephone, $adresse, $mail, $responsable)
     }
 }
 
+// si on recoit une demande de suppression d'une entreprise
+if (isset($_GET['action']) && $_GET['action'] == 'supprimerentreprise') {
+
+    $idEntreprise = $_GET['id_entreprise'];
+
+    // on verifie que ca provient du bouton supprimer
+    if (isset($_GET['from_view']) && $_GET['from_view'] == 'true') {
+        if (require("connexion.php")) {
+            $req = $access->prepare("DELETE FROM entreprises WHERE id_entreprise=?");
+            $req->execute(array($idEntreprise));
+            header("Location: ../entreprises/view_entreprises.php");
+        }
+    } else {
+        header("Location: ../entreprises/view_entreprises.php");
+    }
+}
+
+
+
+
+
+// renvoie toutes les infos des collaborateurs
+function afficherCollaborateurs()
+{
+    if (require("connexion.php")) {
+        $req = $access->prepare("SELECT * FROM collaborateurs");
+        $req->execute();
+        $data = $req->fetchAll(PDO::FETCH_OBJ);
+        $req->closeCursor();
+        return $data;
+    }
+}
+
+// affiche les infos d'un collaborateur
+function afficherCollaborateur($id)
+{
+    if (require("connexion.php")) {
+        $req = $access->prepare("SELECT * FROM collaborateurs WHERE id_collab=$id");
+        $req->execute();
+        $data = $req->fetchAll(PDO::FETCH_OBJ);
+        $req->closeCursor();
+        return $data;
+    }
+}
+
 // fonction pour modifier les informations d'une entreprise
 function modifierCollaborateur($nom, $prenom, $visa, $telephone, $statut, $id_collab)
 {
@@ -147,42 +185,6 @@ function newCollaborateur($nom, $prenom, $visa, $telephone, $statut)
         $req = $access->prepare("INSERT INTO collaborateurs (nom, prenom, visa, telephone, statut) VALUES(?,?,?,?,?)");
         $req->execute(array($nom, $prenom, $visa, $telephone, $statut));
         $req->closeCursor();
-    }
-}
-
-
-// si on recoit une demande de suppression d'un client
-if (isset($_GET['action']) && $_GET['action'] == 'supprimerclient') {
-
-    $idClient = $_GET['id_client'];
-
-    // on verifie que ca provient du bouton supprimer
-    if (isset($_GET['from_view']) && $_GET['from_view'] == 'true') {
-        if (require("connexion.php")) {
-
-            $req = $access->prepare("DELETE FROM clients WHERE id_client=?");
-            $req->execute(array($idClient));
-            header("Location: ../clients/view_clients.php");
-        }
-    } else {
-        header("Location: ../clients/view_clients.php");
-    }
-}
-
-// si on recoit une demande de suppression d'une entreprise
-if (isset($_GET['action']) && $_GET['action'] == 'supprimerentreprise') {
-
-    $idEntreprise = $_GET['id_entreprise'];
-
-    // on verifie que ca provient du bouton supprimer
-    if (isset($_GET['from_view']) && $_GET['from_view'] == 'true') {
-        if (require("connexion.php")) {
-            $req = $access->prepare("DELETE FROM entreprises WHERE id_entreprise=?");
-            $req->execute(array($idEntreprise));
-            header("Location: ../entreprises/view_entreprises.php");
-        }
-    } else {
-        header("Location: ../entreprises/view_entreprises.php");
     }
 }
 
