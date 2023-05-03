@@ -188,6 +188,12 @@ ALTER TABLE `entreprises`
   ADD PRIMARY KEY (`id_entreprise`);
 
 --
+-- Index pour la table `vannes`
+--
+ALTER TABLE `vannes`
+  ADD PRIMARY KEY (`id_vanne`);
+
+--
 -- AUTO_INCREMENT pour les tables déchargées
 --
 
@@ -208,6 +214,12 @@ ALTER TABLE `collaborateurs`
 --
 ALTER TABLE `entreprises`
   MODIFY `id_entreprise` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT pour la table `vannes`
+--
+ALTER TABLE `vannes`
+  MODIFY `id_vanne` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Contraintes pour les tables déchargées
