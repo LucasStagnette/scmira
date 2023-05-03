@@ -72,7 +72,7 @@ nav {
     margin-bottom: 10px;
 }
 
-#repere input[type="number"] {
+#repere input[type="text"] {
     padding: 10px; 
     border-radius: 3px;
     border: 1px solid #ccc;

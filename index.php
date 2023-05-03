@@ -7,8 +7,18 @@ if (isset($_POST['afficher'])) {
 	if (isset($_POST['identite'])) {
 
 		$repere = htmlspecialchars(strip_tags($_POST['serial-number']));
+		$repere = strtoupper($repere);
 		$collaborateur = htmlspecialchars(strip_tags($_POST['identite']));
-		// rediriger l'utilisateur vers la page de la vanne avec les variables en paramètre
+
+		// on verifie si la vanne est deja rentre dans la base de donnee
+		if (verifVanne($repere)) {
+			$url = "vannes/exist_vanne.php?repere=" . urlencode($repere) . "&collaborateur=" . urlencode($collaborateur);
+			header("Location: $url");
+		}
+		else {
+			$url = "vannes/new_vanne.php?repere=" . urlencode($repere) . "&collaborateur=" . urlencode($collaborateur);
+			header("Location: $url");
+		} 
 
 	} else {
 		$error_message = "Veuillez sélectionner une option de la liste déroulante.";
@@ -53,7 +63,7 @@ if (isset($_POST['afficher'])) {
 				<?php endif ?>
 
 				<label>Entrez le repère de la vanne</label>
-				<input placeholder="Repère de la vanne..." type="number" id="serial-number" required name="serial-number">
+				<input placeholder="Repère de la vanne..." type="text" id="serial-number" required name="serial-number">
 				<button name="afficher" type="submit">Afficher</button>
 			</form>
 		</div>

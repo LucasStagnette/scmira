@@ -1,4 +1,6 @@
 <?php
+
+
 // renvoie toutes les infos des clients par ordre de nom
 function afficherClients()
 {
@@ -197,11 +199,24 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimercollaborateur') {
     if (isset($_GET['from_view']) && $_GET['from_view'] == 'true') {
         if (require("connexion.php")) {
 
-            $req = $access->prepare("DELETE FROM collaborateurs WHERE id_collab =?");
+            $req = $access->prepare("DELETE FROM collaborateurs WHERE id_collab=?");
             $req->execute(array($idCollab));
             header("Location: ../collaborateurs/view_collaborateurs.php");
         }
     } else {
         header("Location: ../collaborateurs/view_collaborateurs.php");
+    }
+}
+
+
+// return True si la vanne existe, si elle n'existe pas return False
+function verifVanne($repere) 
+{
+    if(require("connexion.php")) {
+        $req = $access->prepare("SELECT id_vanne FROM vannes WHERE repere=?");
+        $req -> execute(array($repere));
+        $data = $req-> fetchAll(PDO::FETCH_OBJ);
+        $req -> closeCursor();
+        return !empty($data);
     }
 }

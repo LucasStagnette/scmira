@@ -11,6 +11,6 @@ echo $repere, $id_collaborateur;
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <p>nouvelle vanne</p>
+    <p>la vanne existe</p>
 </body>
 </html>
