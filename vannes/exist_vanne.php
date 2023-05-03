@@ -9,6 +9,7 @@ echo $repere, $id_collaborateur;
 <head>
     <meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?= $repere ?></title>
 </head>
 <body>
     <p>la vanne existe</p>

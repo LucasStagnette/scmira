@@ -42,7 +42,7 @@ if (isset($_POST['modifier'])) {
 <head>
     <link rel="stylesheet" type="text/css" href="../style2.css" />
     <meta charset="utf-8" />
-    <title>Scimera</title>
+    <title>Modification Client</title>
 </head>
 
 <body>

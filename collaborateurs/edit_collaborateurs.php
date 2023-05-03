@@ -41,7 +41,7 @@ if (isset($_POST['modifier'])) {
 <head>
     <link rel="stylesheet" type="text/css" href="../style2.css" />
     <meta charset="utf-8" />
-    <title>Modification</title>
+    <title>Modification Collaborateur</title>
 </head>
 
 <body>
