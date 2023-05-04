@@ -13,6 +13,9 @@ $collaborateurs = afficherCollaborateurs();
     <link rel="stylesheet" type="text/css" href="../style.css" />
     <meta charset="utf-8" />
     <title>Collaborateurs</title>
+	<!-- Icone -->
+    <link rel="shortcut icon" href="annexe/logo_scmira.ico" type="image/x-icon" />
+    <link rel="icon" href="annexe/logo_scmira.ico" type="image/x-icon" />
 </head>
 
 <body>

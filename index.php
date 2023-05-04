@@ -3,6 +3,7 @@ require("config/commandes.php");
 
 $collaborateurs = afficherCollaborateurs();
 
+// bouton vanne appuyer
 if (isset($_POST['afficher'])) {
 	if (isset($_POST['identite'])) {
 
@@ -33,6 +34,9 @@ if (isset($_POST['afficher'])) {
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Identification</title>
 	<link rel="stylesheet" type="text/css" href="./style.css">
+	<!-- Icone -->
+    <link rel="shortcut icon" href="annexe/logo_scmira.ico" type="image/x-icon" />
+    <link rel="icon" href="annexe/logo_scmira.ico" type="image/x-icon" />
 </head>
 <body>
 	<header>

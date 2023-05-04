@@ -30,6 +30,9 @@ if (isset($_POST["valider"])) {
     <link rel="stylesheet" type="text/css" href="../style2.css" />
     <meta charset="utf-8" />
     <title>Nouveau Client</title>
+	<!-- Icone -->
+    <link rel="shortcut icon" href="annexe/logo_scmira.ico" type="image/x-icon" />
+    <link rel="icon" href="annexe/logo_scmira.ico" type="image/x-icon" />
 </head>
 
 <body>
