@@ -44,8 +44,8 @@ if (isset($_POST['modifier'])) {
     <meta charset="utf-8" />
     <title>Modification Client</title>
     <!-- Icone -->
-    <link rel="shortcut icon" href="annexe/logo_scmira.ico" type="image/x-icon" />
-    <link rel="icon" href="annexe/logo_scmira.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="../annexe/logo_scmira.ico" type="image/x-icon" />
+    <link rel="icon" href="../annexe/logo_scmira.ico" type="image/x-icon" />
 </head>
 
 <body>
