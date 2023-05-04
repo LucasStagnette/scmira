@@ -65,9 +65,9 @@ if (isset($_POST['afficher'])) {
 				<?php if (isset($error_message)) : ?>
 					<p><?= $error_message ?></p>
 				<?php endif ?>
-
+				<br>
 				<label>Entrez le repère de la vanne</label>
-				<input placeholder="Repère de la vanne..." type="text" id="serial-number" required name="serial-number">
+				<input placeholder="Ecrire exactement le repère !" type="text" id="serial-number" required name="serial-number">
 				<button name="afficher" type="submit">Afficher</button>
 			</form>
 		</div>
