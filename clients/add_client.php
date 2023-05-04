@@ -30,7 +30,7 @@ if (isset($_POST["valider"])) {
     <link rel="stylesheet" type="text/css" href="../style2.css" />
     <meta charset="utf-8" />
     <title>Nouveau Client</title>
-	<!-- Icone -->
+    <!-- Icone -->
     <link rel="shortcut icon" href="annexe/logo_scmira.ico" type="image/x-icon" />
     <link rel="icon" href="annexe/logo_scmira.ico" type="image/x-icon" />
 </head>
@@ -38,14 +38,14 @@ if (isset($_POST["valider"])) {
 <body>
     <header>
         <center>
-        <nav>
-            <ul class="navbar_l">
-                <li class="navbar_e"><a class="navbar_a" href="../index.php">Accueil</a></li>
-                <li class="navbar_e"><a class="navbar_a" href="view_clients.php">Clients</a></li>
-                <li class="navbar_e"><a class="navbar_a" href="../entreprises/view_entreprises.php">Entreprises</a></li>
-                <li class="navbar_e"><a class="navbar_a" href="../collaborateurs/view_collaborateurs.php">Collaborateurs</a></li>
-            </ul>
-        </nav>
+            <nav>
+                <ul class="navbar_l">
+                    <li class="navbar_e"><a class="navbar_a" href="../index.php">Accueil</a></li>
+                    <li class="navbar_e"><a class="navbar_a" href="view_clients.php">Clients</a></li>
+                    <li class="navbar_e"><a class="navbar_a" href="../entreprises/view_entreprises.php">Entreprises</a></li>
+                    <li class="navbar_e"><a class="navbar_a" href="../collaborateurs/view_collaborateurs.php">Collaborateurs</a></li>
+                </ul>
+            </nav>
         </center>
     </header>
     <!-- formulaire pour ajouter un client -->

@@ -19,7 +19,7 @@ if (isset($_POST['valider'])) {
     <link rel="stylesheet" type="text/css" href="../style.css" />
     <meta charset="utf-8" />
     <title>Entreprises</title>
-	<!-- Icone -->
+    <!-- Icone -->
     <link rel="shortcut icon" href="annexe/logo_scmira.ico" type="image/x-icon" />
     <link rel="icon" href="annexe/logo_scmira.ico" type="image/x-icon" />
 </head>
@@ -39,17 +39,17 @@ if (isset($_POST['valider'])) {
 
     <!-- Modification de la balise form pour ajouter une confirmation avant la suppression -->
     <center>
-    <form style="display: inline-block; margin-right: 20px; padding: 10px; border: 1px solid black; border-radius: 5px;width:700px;" method="post" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer tous les clients de cette entreprise ? Cette action est irréversible !')">
-        <label>Attention l'entreprise ne se supprimera pas si un client en fait partie !</label>
-        <label>Avec le bouton ci-dessous, vous pouvez supprimer tous les clients appartenant à une entreprise</label>
-        <select name="id_entreprise">
-            <option>-------</option>
-            <?php foreach ($entreprises as $entreprise) : ?>
-                <option value="<?= $entreprise->id_entreprise ?>"><?= $entreprise->nom ?></option>
-            <?php endforeach ?>
-        </select>
-        <input style="background-color: #333;border: none;color: white;padding: 10px 20px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;border-radius: 5px;cursor: pointer;margin-right: 20px;" type="submit" value="Supprimer les clients" name="valider">
-    </form>
+        <form style="display: inline-block; margin-right: 20px; padding: 10px; border: 1px solid black; border-radius: 5px;width:700px;" method="post" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer tous les clients de cette entreprise ? Cette action est irréversible !')">
+            <label>Attention l'entreprise ne se supprimera pas si un client en fait partie !</label>
+            <label>Avec le bouton ci-dessous, vous pouvez supprimer tous les clients appartenant à une entreprise</label>
+            <select name="id_entreprise">
+                <option>-------</option>
+                <?php foreach ($entreprises as $entreprise) : ?>
+                    <option value="<?= $entreprise->id_entreprise ?>"><?= $entreprise->nom ?></option>
+                <?php endforeach ?>
+            </select>
+            <input style="background-color: #333;border: none;color: white;padding: 10px 20px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;border-radius: 5px;cursor: pointer;margin-right: 20px;" type="submit" value="Supprimer les clients" name="valider">
+        </form>
     </center>
 
     <br> <br>

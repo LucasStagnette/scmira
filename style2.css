@@ -13,18 +13,18 @@ nav {
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
 }
- 
+
 .navbar_l {
     display: flex;
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
- 
+
 .navbar_e {
     margin: 0 10px;
 }
- 
+
 .navbar_a {
     color: #fff;
     text-decoration: none;
@@ -32,7 +32,7 @@ nav {
     font-weight: bold;
     transition: all 0.2s;
 }
- 
+
 .navbar_a a:hover {
     color: #999;
     transform: scale(1.1);
@@ -48,14 +48,14 @@ form {
     background-color: #fafafa;
     padding: 20px;
 }
- 
+
 form label {
     display: block;
     margin: 10px 0;
     font-size: 18px;
     font-weight: bold;
 }
- 
+
 form select {
     width: 100%;
     margin: 10px 0;
@@ -65,7 +65,7 @@ form select {
     box-sizing: border-box;
     font-size: 16px;
 }
- 
+
 form input[type="submit"] {
     width: 100%;
     margin: 10px 0;

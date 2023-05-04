@@ -1,4 +1,4 @@
-<?php 
+<?php
 require("config/commandes.php");
 
 $collaborateurs = afficherCollaborateurs();
@@ -15,12 +15,10 @@ if (isset($_POST['afficher'])) {
 		if (verifVanne($repere)) {
 			$url = "vannes/exist_vanne.php?repere=" . urlencode($repere) . "&collaborateur=" . urlencode($collaborateur);
 			header("Location: $url");
-		}
-		else {
+		} else {
 			$url = "vannes/new_vanne.php?repere=" . urlencode($repere) . "&collaborateur=" . urlencode($collaborateur);
 			header("Location: $url");
-		} 
-
+		}
 	} else {
 		$error_message = "Veuillez sélectionner une option de la liste déroulante.";
 	}
@@ -29,25 +27,27 @@ if (isset($_POST['afficher'])) {
 
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Identification</title>
 	<link rel="stylesheet" type="text/css" href="./style.css">
 	<!-- Icone -->
-    <link rel="shortcut icon" href="annexe/logo_scmira.ico" type="image/x-icon" />
-    <link rel="icon" href="annexe/logo_scmira.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="annexe/logo_scmira.ico" type="image/x-icon" />
+	<link rel="icon" href="annexe/logo_scmira.ico" type="image/x-icon" />
 </head>
+
 <body>
 	<header>
-        <nav>
-            <ul class="navbar_l">
-                <li class="navbar_e"><a class="navbar_a" href="clients/view_clients.php">Clients</a></li>
-                <li class="navbar_e"><a class="navbar_a" href="entreprises/view_entreprises.php">Entreprises</a></li>
-                <li class="navbar_e"><a class="navbar_a" href="collaborateurs/view_collaborateurs.php">Collaborateurs</a></li>
-            </ul>
-        </nav>
-    </header>
+		<nav>
+			<ul class="navbar_l">
+				<li class="navbar_e"><a class="navbar_a" href="clients/view_clients.php">Clients</a></li>
+				<li class="navbar_e"><a class="navbar_a" href="entreprises/view_entreprises.php">Entreprises</a></li>
+				<li class="navbar_e"><a class="navbar_a" href="collaborateurs/view_collaborateurs.php">Collaborateurs</a></li>
+			</ul>
+		</nav>
+	</header>
 	<main>
 		<div id="repere">
 			<form method="post">
@@ -56,8 +56,8 @@ if (isset($_POST['afficher'])) {
 					<label>Identifez-vous</label>
 					<select name="identite">
 						<option selected disabled>Sélectionnez une option</option>
-						<?php foreach($collaborateurs as $collaborateur) : ?>
-							<option value="<?= $collaborateur->id_collab?>"><?= $collaborateur->prenom?> <?= $collaborateur->nom?></option>
+						<?php foreach ($collaborateurs as $collaborateur) : ?>
+							<option value="<?= $collaborateur->id_collab ?>"><?= $collaborateur->prenom ?> <?= $collaborateur->nom ?></option>
 						<?php endforeach ?>
 					</select>
 				</div>
@@ -73,4 +73,5 @@ if (isset($_POST['afficher'])) {
 		</div>
 	</main>
 </body>
+
 </html>

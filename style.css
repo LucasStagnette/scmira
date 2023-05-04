@@ -21,18 +21,18 @@ nav {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
- 
+
 .navbar_l {
     display: flex;
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
- 
+
 .navbar_e {
     margin: 0 10px;
 }
- 
+
 .navbar_a {
     color: #fff;
     text-decoration: none;
@@ -40,20 +40,21 @@ nav {
     font-weight: bold;
     transition: all 0.2s;
 }
- 
+
 .navbar_a a:hover {
     color: #999;
     transform: scale(1.1);
 }
 
-#repere, #boutonclient {
+#repere,
+#boutonclient {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 20%;
 }
-  
+
 #repere {
     flex: 1;
     height: 600px;
@@ -68,24 +69,24 @@ nav {
 
 
 #repere p {
-    font-size: 1.5rem; 
+    font-size: 1.5rem;
     margin-bottom: 10px;
 }
 
 #repere input[type="text"] {
-    padding: 10px; 
+    padding: 10px;
     border-radius: 3px;
     border: 1px solid #ccc;
     width: 100%;
     box-sizing: border-box;
-    font-size: 1.2rem; 
+    font-size: 1.2rem;
 }
 
 #repere button[type="submit"] {
     background-color: #333;
     width: 300px;
     color: #fff;
-    padding: 10px 20px; 
+    padding: 10px 20px;
     border-radius: 3px;
     border: none;
     cursor: pointer;
@@ -158,20 +159,23 @@ th {
 .btn-back:hover {
     background-color: #333;
 }
-.btn-modifier, .btn-supprimer {
+
+.btn-modifier,
+.btn-supprimer {
     background-color: transparent;
     border: none;
     padding: 0;
     margin: 0;
 }
 
-.btn-modifier img, .btn-supprimer img {
+.btn-modifier img,
+.btn-supprimer img {
     width: 20px;
     height: 20px;
     margin-left: 30px;
 }
 
-#table{
+#table {
     border-radius: 20px;
 }
 

@@ -22,7 +22,7 @@ if (isset($_POST['modifier'])) {
             $adresse = htmlspecialchars(strip_tags($_POST['adresse']));
             $mail = htmlspecialchars(strip_tags($_POST['mail']));
             $responsable = htmlspecialchars(strip_tags($_POST['responsable']));
-            
+
             try {
                 modifierEntreprise($nom, $telephone, $adresse, $mail, $responsable, $id_entreprise);
                 header("Location: view_entreprises.php");
@@ -42,7 +42,7 @@ if (isset($_POST['modifier'])) {
     <link rel="stylesheet" type="text/css" href="../style2.css" />
     <meta charset="utf-8" />
     <title>Modification Entreprise</title>
-	<!-- Icone -->
+    <!-- Icone -->
     <link rel="shortcut icon" href="annexe/logo_scmira.ico" type="image/x-icon" />
     <link rel="icon" href="annexe/logo_scmira.ico" type="image/x-icon" />
 </head>
@@ -50,14 +50,14 @@ if (isset($_POST['modifier'])) {
 <body>
     <header>
         <center>
-        <nav>
-            <ul class="navbar_l">
-                <li class="navbar_e"><a class="navbar_a" href="../index.php">Accueil</a></li>
-                <li class="navbar_e"><a class="navbar_a" href="../clients/view_clients.php">Clients</a></li>
-                <li class="navbar_e"><a class="navbar_a" href="view_entreprises.php">Entreprises</a></li>
-                <li class="navbar_e"><a class="navbar_a" href="../collaborateurs/view_collaborateurs.php">Collaborateurs</a></li>
-            </ul>
-        </nav>
+            <nav>
+                <ul class="navbar_l">
+                    <li class="navbar_e"><a class="navbar_a" href="../index.php">Accueil</a></li>
+                    <li class="navbar_e"><a class="navbar_a" href="../clients/view_clients.php">Clients</a></li>
+                    <li class="navbar_e"><a class="navbar_a" href="view_entreprises.php">Entreprises</a></li>
+                    <li class="navbar_e"><a class="navbar_a" href="../collaborateurs/view_collaborateurs.php">Collaborateurs</a></li>
+                </ul>
+            </nav>
         </center>
     </header>
     <?php foreach ($entreprise as $entreprise_info) : ?>

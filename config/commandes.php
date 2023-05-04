@@ -48,12 +48,12 @@ function newClient($nom, $telephone, $mail, $responsable, $id_entreprise)
 }
 
 // fonction pour supprimer tous les clients appartenant à une entreprise
-function deleteclients($id_entreprise) 
+function deleteclients($id_entreprise)
 {
     if (require("connexion.php")) {
-        $req = $access -> prepare("DELETE FROM clients WHERE id_entreprise=?");
-        $req -> execute(array($id_entreprise));
-        $req -> closeCursor();
+        $req = $access->prepare("DELETE FROM clients WHERE id_entreprise=?");
+        $req->execute(array($id_entreprise));
+        $req->closeCursor();
     }
 }
 
@@ -116,7 +116,7 @@ function modifierEntreprise($nom, $telephone, $adresse, $mail, $responsable, $id
 
 // fonction pour ajouter une entreprise
 function newEntreprise($nom, $telephone, $adresse, $mail, $responsable)
-{   
+{
     if (require("connexion.php")) {
         $req = $access->prepare("INSERT INTO entreprises (nom, telephone, adresse, mail, responsable) VALUES(?,?,?,?,?)");
         $req->execute(array($nom, $telephone, $adresse, $mail, $responsable));
@@ -182,7 +182,7 @@ function modifierCollaborateur($nom, $prenom, $visa, $telephone, $statut, $id_co
 
 // fonction pour ajouter une entreprise
 function newCollaborateur($nom, $prenom, $visa, $telephone, $statut)
-{   
+{
     if (require("connexion.php")) {
         $req = $access->prepare("INSERT INTO collaborateurs (nom, prenom, visa, telephone, statut) VALUES(?,?,?,?,?)");
         $req->execute(array($nom, $prenom, $visa, $telephone, $statut));
@@ -210,13 +210,13 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimercollaborateur') {
 
 
 // return True si la vanne existe, si elle n'existe pas return False
-function verifVanne($repere) 
+function verifVanne($repere)
 {
-    if(require("connexion.php")) {
+    if (require("connexion.php")) {
         $req = $access->prepare("SELECT id_vanne FROM vannes WHERE repere=?");
-        $req -> execute(array($repere));
-        $data = $req-> fetchAll(PDO::FETCH_OBJ);
-        $req -> closeCursor();
+        $req->execute(array($repere));
+        $data = $req->fetchAll(PDO::FETCH_OBJ);
+        $req->closeCursor();
         return !empty($data);
     }
 }
