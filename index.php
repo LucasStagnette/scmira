@@ -40,7 +40,7 @@ if (isset($_POST['afficher'])) {
 
 <body>
 	<header>
-		<nav>
+		<nav style="max-width: 785px; margin: 0 auto;">
 			<ul class="navbar_l">
 				<li class="navbar_e"><a class="navbar_a" href="clients/view_clients.php">Clients</a></li>
 				<li class="navbar_e"><a class="navbar_a" href="entreprises/view_entreprises.php">Entreprises</a></li>
@@ -49,13 +49,13 @@ if (isset($_POST['afficher'])) {
 		</nav>
 	</header>
 	<main>
-		<div id="repere">
+		<div id="repere" class="repere-container">
 			<form method="post">
 
 				<div>
 					<label>Identifez-vous</label>
 					<select name="identite">
-						<option selected disabled>Sélectionnez une option</option>
+						<option selected disabled>Sélectionnez votre nom</option>
 						<?php foreach ($collaborateurs as $collaborateur) : ?>
 							<option value="<?= $collaborateur->id_collab ?>"><?= $collaborateur->prenom ?> <?= $collaborateur->nom ?></option>
 						<?php endforeach ?>
