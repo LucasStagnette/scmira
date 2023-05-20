@@ -40,7 +40,7 @@ if (isset($_POST['afficher'])) {
 
 <body>
 	<header>
-		<nav style="max-width: 785px; margin: 0 auto;">
+		<nav style="max-width: 704px; margin: 0 auto;">
 			<ul class="navbar_l">
 				<li class="navbar_e"><a class="navbar_a" href="clients/view_clients.php">Clients</a></li>
 				<li class="navbar_e"><a class="navbar_a" href="entreprises/view_entreprises.php">Entreprises</a></li>
@@ -66,7 +66,7 @@ if (isset($_POST['afficher'])) {
 					<p><?= $error_message ?></p>
 				<?php endif ?>
 				<br>
-				<label>Entrez le repère de la vanne</label>
+				<label>Entrez le repère</label>
 				<input placeholder="Ecrire exactement le repère !" type="text" id="serial-number" required name="serial-number">
 				<button name="afficher" type="submit">Afficher</button>
 			</form>
