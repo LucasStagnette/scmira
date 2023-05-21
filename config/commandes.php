@@ -209,6 +209,9 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimercollaborateur') {
 }
 
 
+
+
+
 // return True si la vanne existe, si elle n'existe pas return False
 function verifVanne($repere)
 {
@@ -218,5 +221,16 @@ function verifVanne($repere)
         $data = $req->fetchAll(PDO::FETCH_OBJ);
         $req->closeCursor();
         return !empty($data);
+    }
+}
+
+
+// fonction pour créer et ajouter les informations de base de la vanne 
+function newVanne($id_client, $unite, $contact, $produit, $temperature, $repere, $marque, $type, $nserie, $entree, $sortie, $pression, $date, $visa)
+{
+    if(require("connexion.php")) {
+        $req = $access -> prepare("INSERT INTO vannes(client, unite, contact, repere, marque, type, nserie, dnentreesortie, pnentreesortie,produit, date, temperature, pressiontarage, visa) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $req -> execute(array($id_client, $unite, $contact, $repere, $marque, $type, $nserie, $entree, $sortie, $produit, $date, $temperature, $pression, $visa));
+        $req -> closeCursor();        
     }
 }
