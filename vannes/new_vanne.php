@@ -105,8 +105,8 @@ if (isset($_POST["sauvegarder"])) {
         <label>Date :</label>
         <input name="date" type="date" value="<?php echo date('Y-m-d'); ?>" required>
         <br>
-        <button type="submit" name="sauvegarder">Sauvegarder</button>
-        <a href="../index.php">Annuler</a>
+        <input type="submit" name="sauvegarder" value="Sauvegarder"><br><br>
+        <center><a id="annuler" href="../index.php">Annuler</a></center>
     </form>
 </body>
 
