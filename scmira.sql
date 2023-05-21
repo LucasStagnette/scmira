@@ -110,24 +110,27 @@ CREATE TABLE `vannes` (
   `connexionentreesortie` varchar(50) NOT NULL,
   `produit` varchar(50) NOT NULL,
   `etatproduit` varchar(50) NOT NULL,
-  `date` varchar(50) NOT NULL,
+  `date` date NOT NULL,
   `temperature` varchar(50) NOT NULL,
   `pressiontarage` varchar(50) NOT NULL,
+  `visa` varchar(50) NOT NULL,
   `ctrl1` varchar(50) NOT NULL,
   `ctrl2` varchar(50) NOT NULL,
   `ctrl3` varchar(50) NOT NULL,
   `obsavantdemo` varchar(50) NOT NULL,
+  `visaavantdemo` varchar(50) NOT NULL,
   `hauteurvisreglage` varchar(50) NOT NULL,
   `posbagueinf` varchar(50) NOT NULL,
   `posbaguesup` varchar(50) NOT NULL,
   `nbentretoises` varchar(50) NOT NULL,
   `diametrepassagebuse` varchar(50) NOT NULL,
-  `e_corpsexterne` varchar(50) NOT NULL,
-  `e_corpsinterne` varchar(50) NOT NULL,
-  `e_ressortpoidsrondelles` varchar(50) NOT NULL
+  `visademontage` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 -- ajout du reste des infos des vannes
-ALTER TABLE `vannes` 
+ALTER TABLE `vannes`
+  ADD `e_corpsexterne` varchar(50) NOT NULL,
+  ADD `e_corpsinterne` varchar(50) NOT NULL,
+  ADD `e_ressortpoidsrondelles` varchar(50) NOT NULL,
   ADD `e_tige` varchar(50) NOT NULL,
   ADD `e_buse` varchar(50) NOT NULL,
   ADD `e_clapet` varchar(50) NOT NULL,
@@ -154,6 +157,7 @@ ALTER TABLE `vannes`
   ADD `tr_pointal` varchar(50) NOT NULL,
   ADD `tr_porteesjoint` varchar(50) NOT NULL,
   ADD `obs` varchar(50) NOT NULL,
+  ADD `visaobs` varchar(50) NOT NULL,
   ADD `essais_pt` varchar(50) NOT NULL,
   ADD `essais_pr` varchar(50) NOT NULL,
   ADD `essais_fluide` varchar(5) NOT NULL,
@@ -162,7 +166,8 @@ ALTER TABLE `vannes`
   ADD `essais_etancheitesouffelt` varchar(50) NOT NULL,
   ADD `essais_etancheiteexterne` varchar(50) NOT NULL,
   ADD `essais_peinturefinale` varchar(50) NOT NULL,
-  ADD `remontage` varchar(50) NOT NULL;
+  ADD `remontage` varchar(50) NOT NULL,
+  ADD `visafinal` varchar(50) NOT NULL;
 
 --
 -- Index pour les tables déchargées
@@ -188,12 +193,6 @@ ALTER TABLE `entreprises`
   ADD PRIMARY KEY (`id_entreprise`);
 
 --
--- Index pour la table `vannes`
---
-ALTER TABLE `vannes`
-  ADD PRIMARY KEY (`id_vanne`);
-
---
 -- AUTO_INCREMENT pour les tables déchargées
 --
 
@@ -214,12 +213,6 @@ ALTER TABLE `collaborateurs`
 --
 ALTER TABLE `entreprises`
   MODIFY `id_entreprise` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT pour la table `vannes`
---
-ALTER TABLE `vannes`
-  MODIFY `id_vanne` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Contraintes pour les tables déchargées
